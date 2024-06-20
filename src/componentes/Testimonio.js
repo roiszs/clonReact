@@ -1,16 +1,16 @@
 import React from 'react';
 import '../styles-sheets/Testimonio.css';
 
-function Testimonio() {
+function Testimonio(props) {
   return (
     <div className='contenedor-testimonio'>
       <img className='imagen-testimonio'
-      src={require('../imagenes/foto.jpeg')}
+      src={require(`../imagenes/testimonio-${props.imagen}.jpeg`)}
       alt='Foto de Santiago'/>
       <div className='contenedor-texto-testimonio'>
-     <p className='nombre-testimonio'>Santiago Rodriguez en México</p>
-     <p className='cargo-testimonio'>Ingeniero en Software en No Country</p>
-     <p className='texto-testimonio'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original.</p>
+     <p className='nombre-testimonio'>{props.nombre} en {props.pais}</p>
+     <p className='cargo-testimonio'>{props.cargo} en {props.empresa}</p>
+     <p className='texto-testimonio'>"{props.testimonio}"</p>
     
       </div>
     </div>
